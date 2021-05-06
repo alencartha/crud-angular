@@ -21,6 +21,11 @@ import { ProductCreateComponent } from './components/products/product-create/pro
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,9 +46,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule, 
+    MatCardModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
