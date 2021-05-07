@@ -1,0 +1,20 @@
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+button{
+    margin-right:15px;
+    margin-top: 20px;
+}
+
+.btn-delete{
+    background-color: #EB1F1F;
+    color: #fff;
+    letter-spacing: 1.1px;
+}
+
+.btn-cancel {
+color:#000
+}

@@ -2,8 +2,8 @@ import { Product } from './product.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable, EMPTY  } from 'rxjs';
-import { map, catchError } from "rxjs/operators";
+import { Observable, EMPTY } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -14,11 +14,11 @@ export class ProductService {
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   showMessage(msg: string, isError: boolean = false): void {
-    this.snackBar.open(msg, "X", {
-      duration: 3000,
-      horizontalPosition: "right",
-      verticalPosition: "top",
-      panelClass: isError ? ["msg-error"] : ["msg-success"],
+    this.snackBar.open(msg, 'X', {
+      duration: 10000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: isError ? ['msg-error'] : ['msg-success'],
     });
   }
 
@@ -43,8 +43,13 @@ export class ProductService {
     );
   }
 
+  deleteById(product: Product): Observable<Product> {
+    const url = `${this.baseUrl}/${product.id}`;
+    return this.http.delete<Product>(url);
+  }
+
   errorHandler(e: any): Observable<any> {
-    this.showMessage("Ocorreu um erro!", true);
+    this.showMessage('Ocorreu um erro!', true);
     return EMPTY;
   }
 }

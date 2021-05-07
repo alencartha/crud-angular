@@ -7,23 +7,18 @@
     },
     {
       "id": 2,
-      "name": "Notebook MAC-Pro",
+      "name": "Notebook Mac Pro",
       "price": 12000.89
     },
     {
       "id": 3,
-      "name": "Samsung S20 - preto",
-      "price": 5000.89
+      "name": "Sansung S20+ Ultra",
+      "price": "7520.89"
     },
     {
-      "id": 4,
-      "name": "Geladeira",
-      "price": 1300.89
-    },
-    {
-      "name": "lapis preto",
-      "price": "2.50",
-      "id": 5
+      "name": "Lapis Preto Básico",
+      "price": "1.50",
+      "id": 4
     }
   ]
 }
