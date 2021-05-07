@@ -6,10 +6,10 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 const EXAMPLE_DATA: Product[] = [
-  {id: 1, name: 'Hydrogen', price: "9.99"},
-  {id: 2, name: 'Helium', price: "9.99"},
-  {id: 3, name: 'Lithium', price: "9.99"},
-  {id: 4, name: 'Beryllium', price: "9.99"},
+  { id: 1, name: 'Hydrogen', price: '9.99' },
+  { id: 2, name: 'Helium', price: '9.99' },
+  { id: 3, name: 'Lithium', price: '9.99' },
+  { id: 4, name: 'Beryllium', price: '9.99' },
 ];
 
 /**
@@ -37,12 +37,14 @@ export class ProductRead2DataSource extends DataSource<Product> {
     const dataMutations = [
       observableOf(this.data),
       this.paginator.page,
-      this.sort.sortChange
+      this.sort.sortChange,
     ];
 
-    return merge(...dataMutations).pipe(map(() => {
-      return this.getPagedData(this.getSortedData([...this.data]));
-    }));
+    return merge(...dataMutations).pipe(
+      map(() => {
+        return this.getPagedData(this.getSortedData([...this.data]));
+      })
+    );
   }
 
   /**
@@ -72,9 +74,12 @@ export class ProductRead2DataSource extends DataSource<Product> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
-        default: return 0;
+        case 'name':
+          return compare(a.name, b.name, isAsc);
+        case 'id':
+          return compare(+a.id, +b.id, isAsc);
+        default:
+          return 0;
       }
     });
   }

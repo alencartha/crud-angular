@@ -21,19 +21,9 @@
       "price": 1300.89
     },
     {
-      "id": 5,
-      "name": "oi",
-      "price": 0
-    },
-    {
-      "id": 6,
-      "name": "oi",
-      "price": "5"
-    },
-    {
-      "name": "thais",
-      "price": "5",
-      "id": 7
+      "name": "lapis preto",
+      "price": "2.50",
+      "id": 5
     }
   ]
 }
